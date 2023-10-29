@@ -1,1396 +1,429 @@
-<div data-v-5e9078c0=""><h1 data-v-5e9078c0="">
-      Top 25 Stacks interview
-      questions and answers in 2021.
-    </h1> <p data-v-5e9078c0="" align="center"><a data-v-5e9078c0="" href="https://devinterview.io/"><img data-v-5e9078c0="" src="https://source.unsplash.com/collection/52661698/700x350"></a></p> <p data-v-5e9078c0="">
-      You can check all
-      25
-      Stacks interview questions here 👉
-      https://devinterview.io/data/stacks-interview-questions
-    </p> <br data-v-5e9078c0=""> 
-    <div>
+# ⚫ Stacks in Tech Interviews 2024: 21 Must-Know Questions & Answers
 
-## 🔹 1\. Explain why Stack is a recursive data structure
+**Stacks** are linear data structures that follow the Last In, First Out (LIFO) principle, meaning the most recently added element is the first to be removed. They are foundational in tasks like parenthesis matching, undo operations, and depth-first search. In coding interviews, questions about stacks test a candidate's understanding of **sequential data storage** and its applications in various computational scenarios.
 
-</div>
+Check out our carefully selected list of **basic** and **advanced** Stacks questions and answers to be well-prepared for your tech interviews in 2024.
 
-<div>
+![Stacks Decorative Image](https://storage.googleapis.com/dev-stack-app.appspot.com/blogImg/stacks.png?GoogleAccessId=firebase-adminsdk-bgeaf%40dev-stack-app.iam.gserviceaccount.com&Expires=1698606785&Signature=NCUUa1jSHvgmIgCJuRozKJglqXekTe6bgrv8h5R68l4Mn%2FkJDmiYkYY9cSUgyoIYA3YWGiDstysUy9%2BBedgsAAkG9PDeFfqR1dTi%2FPs3U44v%2BRobjUDeurnExyrsXakbGmd0GyQMTFFG7pSBCelHPHj6K41cIeu0zeXO1S%2F%2Bm%2Bp%2BmClTNaqKASFzKjgQ%2BqEqfu15w%2F9hXlcpO%2B5LgPxoavl4kWsD7Rwur9m8qyDQgcA8T7eAduUYjku6JAID7e9l0Ad39gDsNEYeCiXJNaF1vfmT6H7NnaEqu2DYoh%2F0zXeQN7hQPw%2BlJG6%2FK%2Bj2nMpM6pCUXGElAdb2XZmq7gNhmg%3D%3D)
 
-### Answer:
+👉🏼 You can also find all answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-<div class="answer">
+---
 
-<div>
+## 🔹 1. What is a _Stack_?
 
-<div>
+### Answer
 
-<div class="AnswerBody">
+A **stack** is a simple data structure that follows the **Last-In, First-Out (LIFO)** principle. It's akin to a stack of books, where the most recent addition is at the top and easily accessible.
 
-A **stack** is a **recursive** data structure, so it's:
+### Core Characteristics
 
-*   a stack is either empty or
-*   it consists of a top and the rest which is a stack by itself;
+- **Data Representation**: Stacks can hold homogeneous or heterogeneous data.
+- **Access Restrictions**: Restricted access primarily to the top of the stack, making it more efficient for certain algorithms.
 
-</div>
+### Stack Operations
 
-</div>
+1. **Push**: Adds an element to the top of the stack.
+2. **Pop**: Removes and returns the top element.
+3. **Peek**: Returns the top element without removing it.
+4. **isEmpty**: Checks if the stack is empty.
+5. **isFull** (for array-based stacks): Checks if the stack is full.
 
-<div class="row my-2">
+All the above operations typically have a time complexity of $O(1)$, making stack operations highly efficient.
 
-<div><span>Source: <span>www.cs.cmu.edu https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html "Explain why Stack is a recursive data structure Interview Questions Source To Answer"</span></span>   </div>
+### Visual Representation
 
-</div>
+![Stack Data Structure](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/stacks%2Fstack.png?alt=media&token=74633f0a-83f7-4038-8b82-e10f0d6006b9&_gl=1*1uzhlk1*_ga*OTYzMjY5NTkwLjE2ODg4NDM4Njg.*_ga_CW55HF8NVT*MTY5NjYwNzMxNS4xNDcuMS4xNjk2NjA3NzE2LjUwLjAuMA..)
 
-</div>
+### Practical Applications
 
-</div>
+1. **Function Calls**: The call stack keeps track of program flow and memory allocation during method invocations.
+2. **Text Editors**: The undo/redo functionality often uses a stack.
+3. **Web Browsers**: The Back button's behavior can be implemented with a stack.
+4. **Parsing**: Stacks can be used in language processing for functions like balanced parentheses, and **binary expression evaluation**.
 
-</div>
+5. **Memory Management**: Stacks play a role in managing dynamic memory in computer systems.
 
-</div>
+6. **Infix to Postfix Conversion**: It's a crucial step for evaluating mathematical expressions such as `2 + 3 * 5 - 4` in the correct precedence order. Stack-based conversion simplifies parsing and involves operators such as `push` and `pop` until the correct order is achieved.
 
-<div data-v-5e9078c0="" class="unit">
+7. **Graph Algorithms**: Graph traversal algorithms such as Depth First Search (DFS) deploy **stacks** as a key mechanism to remember vertices and explore connected components.
 
-<div>
+### Code Example: Basic Stack
 
-## 🔹 2\. Define Stack
+Here is the Python code:
 
-</div>
+```python
+class Stack:
+    def __init__(self):
+        self.stack = []
 
-<div>
+    def push(self, item):
+        self.stack.append(item)
 
-### Answer:
+    def pop(self):
+        if not self.is_empty():
+            return self.stack.pop()
 
-<div class="answer">
+    def peek(self):
+        if not self.is_empty():
+            return self.stack[-1]
 
-<div>
+    def is_empty(self):
+        return len(self.stack) == 0
 
-<div>
+    def size(self):
+        return len(self.stack)
+```
 
-<div class="AnswerBody">
+---
 
-A **Stack** is a container of objects that are inserted and removed according to the last-in first-out (**LIFO**) principle. In the pushdown stacks only two operations are allowed: push the item into the stack, and pop the item out of the stack.
+## 🔹 2. Why _Stack_ is considered a _Recursive_ data structure?
 
-There are basically three operations that can be performed on stacks. They are:
+### Answer
 
-1.  inserting an item into a stack (**push**).
-2.  deleting an item from the stack (**pop**).
-3.  displaying the contents of the stack (**peek** or **top**).
+A **stack** is considered a **recursive data structure** because its definition is self-referential. At any given point, a stack can be defined as a top element combined with another stack (the remainder).
 
-A stack is a limited access data structure - elements can be added and removed from the stack only at the top. push adds an item to the top of the stack, pop removes the item from the top. A helpful analogy is to think of a stack of books; you can remove only the top book, also you can add a new book on the top.
+Whenever an element is pushed onto or popped off a stack, what remains is still a stack. This **self-referential nature**, where operations reduce the problem to smaller instances of the same type, embodies the essence of **recursion**
 
-</div>
+---
 
-</div>
+## 🔹 3. When should I use _Stack_ or _Queue_ data structures instead of _Arrays/Lists_?
 
-<div class="row my-2">
+### Answer
 
-<div><span>Source: <span>www.cs.cmu.edu https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html "Define Stack Interview Questions Source To Answer"</span></span>   </div>
+**Queues** and **Stacks** provide structured ways to handle data, offering distinct advantages over more generic structures like **Lists** or **Arrays**.
 
-</div>
+### Key Features
 
-</div>
+#### Queues 
 
-</div>
+- **Characteristic**: First-In-First-Out (FIFO)
+- **Usage**: Ideal for ordered processing, such as print queues or BFS traversal.
 
-</div>
+#### Stacks
 
-</div>
+- **Characteristic**: Last-In-First-Out (LIFO)
+- **Usage**: Perfect for tasks requiring reverse order like undo actions or DFS traversal.
 
-<div data-v-5e9078c0="" class="unit">
+#### Lists/Arrays
 
-<div>
+- **Characteristic**: Random Access
+- **Usage**: Suitable when you need random access to elements or don't require strict order or data management.
 
-## 🔹 3\. Why and when should I use Stack or Queue data structures instead of Arrays/Lists?
+---
 
-</div>
+## 🔹 4. What are _Infix_, _Prefix_ and _Postfix_ notations?
 
-<div>
+### Answer
 
-### Answer:
+In computer science, **infix**, **prefix**, and **postfix** notations are methods of writing mathematical expressions. While humans generally use infix notation, machines can more efficiently parse prefix and postfix notations.
 
-<div class="answer">
+### Infix, Prefix and Postfix Notations
 
-<div>
+- **Infix**: Operators are placed between operands. This is the most common notation for humans due to its intuitiveness.
+  
+  Example: $1 + 2$
 
-<div>
+- **Prefix**: Operators are placed before operands. The order of operations is determined by the position of the operator rather than parentheses.
+  
+  Example: $+ 1 \times 2 3$ which evaluates to $1 + (2 \times 3) = 7$
 
-<div class="AnswerBody">
+- **Postfix**: Operators are placed after operands. The order of operations is determined by the sequence in which operands and operators appear.
+  
+  Example: $1 2 3 \times +$ which evaluates to $1 + (2 \times 3) = 7$
 
-Because they help manage your data in more a _particular_ way than arrays and lists. It means that when you're debugging a problem, you won't have to wonder if someone randomly inserted an element into the middle of your list, messing up some invariants.
+### Relation to Stacks
 
-Arrays and lists are random access. They are very flexible and also easily _corruptible_. If you want to manage your data as FIFO or LIFO it's best to use those, already implemented, collections.
+- **Conversion**: Stacks can facilitate the conversion of expressions from one notation to another. For instance, the Shunting Yard algorithm converts infix expressions to postfix notation using a stack.
+  
+- **Evaluation**: Both postfix and prefix expressions are evaluated using stacks. For postfix:
+  1. Operands are pushed onto the stack.
+  2. Upon encountering an operator, the required operands are popped, the operation is executed, and the result is pushed back.
 
-More practically you should:
+  For example, for the expression $1 2 3 \times +$:
+  - 1 is pushed onto the stack.
+  - 2 is pushed.
+  - 3 is pushed.
+  - $\times$ is encountered. 3 and 2 are popped, multiplied to get 6, which is then pushed.
+  - $+$ is encountered. 6 and 1 are popped, added to get 7, which is then pushed. This 7 is the result.
 
-*   Use a queue when you want to get things out in the order that you put them in (FIFO)
-*   Use a stack when you want to get things out in the reverse order than you put them in (LIFO)
-*   Use a list when you want to get anything out, regardless of when you put them in (and when you don't want them to automatically be removed).
+Evaluating prefix expressions follows a similar **stack-based method** but traverses the expression differently.
 
-</div>
+### Code Example: Postfix Evaluation
 
-</div>
+Here is the Python code:
 
-<div class="row my-2">
+```python
+def evaluate_postfix(expression):
+    stack = []
+    tokens = expression.split()  # Handle multi-digit numbers
+    for token in tokens:
+        if token.isdigit():
+            stack.append(int(token))
+        else:
+            operand2 = stack.pop()
+            operand1 = stack.pop()
+            stack.append(perform_operation(operand1, operand2, token))
+    return stack[0]
 
-<div><span>Source: <span>stackoverflow.com https://stackoverflow.com/questions/2074970/stack-and-queue-why "Why and when should I use Stack or Queue data structures instead of Arrays/Lists? Interview Questions Source To Answer"</span></span>   </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 4\. Why Are Stacks Useful?
-
-</div>
-
-<div>
-
-### Answer:
-
-<div class="answer">
-
-<div>
-
-<div>
-
-<div class="AnswerBody">
-
-They’re very useful because they afford you constant time `_O_(_1_)` operations when _inserting_ or _removing_ from the front of a data structure. One common use of a stack is in compilers, where a stack can be used to make sure that the brackets and parentheses in a code file are all balanced, i.e., have an opening and closing counterpart. Stacks are also very useful in evaluating mathematical expressions.
-
-</div>
-
-</div>
-
-<div class="row my-2">
-
-<div><span>Source: <span>medium.com https://medium.com/better-programming/solving-the-min-stack-problem-in-o-1-time-using-a-single-stack-in-ruby-626f65142927 "Why Are Stacks Useful? Interview Questions Source To Answer"</span></span>   </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 5\. How to implement Linked List Using Stack?
-
-</div>
-
-<div>
-
-### Answer:
-
-<div class="answer">
-
-<div>
-
-<div>
-
-<div class="AnswerBody">
-
-You can simulate a linked list by using two stacks. One stack is the "list," and the other is used for temporary storage.
-
-*   To **add** an item at the head, simply push the item onto the stack.
-*   To **remove** from the head, pop from the stack.
-*   To **insert** into the middle somewhere, pop items from the "list" stack and push them onto the temporary stack until you get to your insertion point. Push the new item onto the "list" stack, then pop from the temporary stack and push back onto the "list" stack. Deletion of an arbitrary node is similar.
-
-This isn't terribly efficient, by the way, but it would in fact work.
-
-</div>
-
-</div>
-
-<div class="row my-2">
-
-<div><span>Source: <span>stackoverflow.com https://stackoverflow.com/questions/36150565/how-to-implement-linked-list-using-stack "How to implement Linked List Using Stack? Interview Questions Source To Answer"</span></span>   </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 6\. Implement a Queue using two Stacks
-
-</div>
-
-<div>
-
-### Answer:
-
-<div class="answer">
-
-<div>
-
-<div class="mb-2"><span class="h5">Problem</span></div>
-
-<div>
-
-<div class="AnswerBody">
-
-Suppose we have two stacks and no other temporary variable. Is to possible to "construct" a queue data structure using only the two stacks?
-
-</div>
-
-</div>
-
-<div>
-
-<div class="AnswerBody">
-
-Keep two stacks, let's call them `inbox` and `outbox`.
-
-**Enqueue**:
-
-*   Push the new element onto `inbox`
-
-**Dequeue**:
-
-*   If `outbox` is empty, refill it by popping **each** element from `inbox` and pushing it onto `outbox`
-*   Pop and return the top element from `outbox`
-
-</div>
-
-</div>
-
-<div>
-
-<div class="mb-2 mt-2"><span class="h5">Complexity Analysis</span></div>
-
-<div class="hide-small">
-
-<div class="row no-gutters my-2 align-items-end">
-
-<div class="col font-weight-bold text-muted">Time:</div>
-
-<div class="col text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Constant</div>
-
-<div class="complexity amazing first p-1 justify-content-center shadow-text selected-complexity effect7">O(1)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Dbl. Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Square Root</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(√n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Linear</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted justify-content-center">Linearithmic</div>
-
-<div class="complexity bad p-1 justify-content-center shadow-text ">O(n log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Quadratic</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_n_<sup>2</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Exponential</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_2_<sup>n</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted">Factorial</div>
-
-<div class="complexity terrible last p-1 justify-content-center shadow-text ">O(n!)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hide-small">
-
-<div class="row no-gutters my-2 align-items-end">
-
-<div class="col font-weight-bold text-muted">Space:</div>
-
-<div class="col text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Constant</div>
-
-<div class="complexity amazing first p-1 justify-content-center shadow-text selected-complexity effect7">O(1)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Dbl. Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Square Root</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(√n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Linear</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted justify-content-center">Linearithmic</div>
-
-<div class="complexity bad p-1 justify-content-center shadow-text ">O(n log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Quadratic</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_n_<sup>2</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Exponential</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_2_<sup>n</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted">Factorial</div>
-
-<div class="complexity terrible last p-1 justify-content-center shadow-text ">O(n!)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hide-large">
-
-**Time:** <mark>O(1)</mark>
-
-**Space:** <mark>O(1)</mark>
-
-</div>
-
-<div class="mt-3">
-
-<div>
-
-<div class="AnswerBody">
-
-In the worst case scenario when outbox stack is empty, the algorithm pops n elements from inbox stack and pushes n elements to outbox, where n is the queue size. This gives `2*n` operations, which is `O(n)`. But when outbox stack is not empty the algorithm has `O(1)` time complexity that gives amortised `O(1)`.
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div style="font-size: 14px;">
-
-<div class="mb-3 mt-2"><span class="h5">Implementation</span></div>
-
-<div>
-
-<nav class="mdc-tab-bar">
-
-<div class="mdc-tab-scroller">
-
-<div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
-
-<div class="mdc-tab-scroller__scroll-content"><button class="mdc-ripple-upgraded mdc-ripple-upgraded--background-focused mdc-tab mdc-tab--min-width mdc-tab--active" aria-selected="true" tabindex="0">
-
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>C#</span> <span class="shadow-text lang-badge cs">CS</span></span></div>
-
-<span class="mdc-tab-indicator mdc-tab-indicator--active"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button><button class="mdc-ripple-upgraded mdc-tab mdc-tab--min-width">
-
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>JavaScript</span> <span class="shadow-text lang-badge js">JS</span></span></div>
-
-<span class="mdc-tab-indicator"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button><button class="mdc-ripple-upgraded mdc-tab mdc-tab--min-width">
-
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>Java</span> <span class="shadow-text lang-badge java">Java</span></span></div>
-
-<span class="mdc-tab-indicator"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button><button class="mdc-ripple-upgraded mdc-tab mdc-tab--min-width">
-
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>Python</span> <span class="shadow-text lang-badge py">PY</span></span></div>
-
-<span class="mdc-tab-indicator"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button></div>
-
-</div>
-
-</div>
-
-</nav>
-
-</div>
-
-<div class="mt-2">
-
-<div class="AnswerBody">
-
-    public class Queue<T> where T : class
-    {
-        private Stack<T> input = new Stack<T>();
-        private Stack<T> output = new Stack<T>();
-
-        public void Enqueue(T t)
-        {
-            input.Push(t);
-        }
-
-        public T Dequeue()
-        {
-            if (output.Count == 0)
-            {
-                while (input.Count != 0)
-                {
-                    output.Push(input.Pop());
-                }
-            }
-
-            return output.Pop();
-        }
+def perform_operation(operand1, operand2, operator):
+    operations = {
+        '+': operand1 + operand2,
+        '-': operand1 - operand2,
+        '*': operand1 * operand2,
+        '/': operand1 / operand2
     }
+    return operations[operator]
 
-</div>
+# Example usage
+print(evaluate_postfix('1 2 + 3 4 * -'))  # Output: -7
+```
 
-</div>
+---
 
-</div>
+## 🔹 5. Compare _Array-based_ vs _Linked List_ stack implementations.
 
-<div class="row my-2">
+### Answer
 
-<div><span>Source: <span>stackoverflow.com https://stackoverflow.com/questions/69192/how-to-implement-a-queue-using-two-stacks "Implement a Queue using two Stacks Interview Questions Source To Answer"</span></span>   </div>
+**Array-based stacks** excel in time efficiency and direct element access. In contrast, **linked list stacks** are preferable for dynamic sizing and easy insertions or deletions.
 
-</div>
+### Common Features
 
-</div>
+- **Speed of Operations**: Both `pop` and `push` are $O(1)$ operations.
+- **Memory Use**: Both have $O(n)$ space complexity.
+- **Flexibility**: Both can adapt their sizes, but their resizing strategies differ.
 
-</div>
+### Key Distinctions
 
-</div>
+#### Array-Based Stack
 
-</div>
+- **Locality**: Consecutive memory locations benefit CPU caching.
+- **Random Access**: Provides direct element access.
+- **Iterator Needs**: Preferable if indexing or iterators are required.
+- **Performance**: Slightly faster for top-element operations and potentially better for time-sensitive tasks due to caching.
+- **Push**: $O(1)$ on average; resizing might cause occasional $O(n)$.
 
-<div data-v-5e9078c0="" class="unit">
+#### Linked List Stack
 
-<div>
+- **Memory Efficiency**: Better suited for fluctuating sizes and limited memory scenarios.
+- **Resizing Overhead**: No resizing overheads.
+- **Pointer Overhead**: Requires extra memory for storing pointers.
 
-## 🔹 7\. Implement Stack using Two Queues (with efficient push)
+### Code Example: Array-Based Stack
 
-</div>
+Here is the Python code:
 
-<div>
+```python
+class ArrayBasedStack:
+    def __init__(self):
+        self.stack = []
+    def push(self, item):
+        self.stack.append(item)
+    def pop(self):
+        return self.stack.pop() if self.stack else None
+```
 
-### Answer:
+### Code Example: Linked List Stack
 
-<div class="answer">
+Here is the Python code:
 
-<div>
+```python
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+class LinkedListStack:
+    def __init__(self):
+        self.head = None
+    def push(self, item):
+        new_node = Node(item)
+        new_node.next = self.head
+        self.head = new_node
+    def pop(self):
+        if self.head:
+            temp = self.head
+            self.head = self.head.next
+            return temp.data
+        return None
+```
 
-<div class="mb-2"><span class="h5">Problem</span></div>
+---
 
-<div>
+## 🔹 6. Design a _Stack_ that supports _Retrieving_ the min element in _O(1)_.
 
-<div class="AnswerBody">
+### Answer
 
-Given two queues with their standard operations (`enqueue`, `dequeue`, `isempty`, `size`), implement a stack with its standard operations (`pop`, `push`, `isempty`, `size`). The stack should be efficient when pushing an item.
+### Problem Statement
 
-</div>
+The goal is to design a **stack** data structure that can efficiently retrieve both the minimum element and the top element in $O(1)$ time complexity. 
 
-</div>
+### Solution
 
-<div>
+To meet the time complexity requirement, we'll maintain two stacks:
 
-<div class="AnswerBody">
+1. **Main Stack** for standard stack functionality.
+2. **Auxiliary Stack** that keeps track of the minimum element up to a given stack position.
 
-Given we have `queue1` and `queue2`:
+#### Algorithm Steps
 
-**push** - `O(1)`:
+1. **Pop** and **Push**
+   - For each element $e$ in the **Main Stack**, check if it's smaller than or equal to the top element in the **Auxiliary Stack**. If $e$ is the new minimum, push it onto both stacks.
 
-*   enqueue in `queue1`
+2. **Minimum Element Retrieval**: The top element of the **Auxiliary Stack** will always be the minimum element of the main stack.
 
-**pop** - `O(n)`:
+#### Complexity Analysis
 
-*   while size of `queue1` is bigger than 1, pipe (dequeue + enqueue) dequeued items from `queue1` into `queue2`
-*   dequeue and return the last item of `queue1`, then switch the names of `queue1` and `queue2`
+- **Time Complexity**: $O(1)$ for all operations.
+- **Space Complexity**: $O(N)$, where $N$ is the number of elements in the stack.
 
-</div>
+#### Implementation
 
-</div>
+Here is the Python code:
 
-<div>
+```python
+class MinStack:
+    def __init__(self):
+        self.stack = []
+        self.min_stack = []
 
-<div class="mb-2 mt-2"><span class="h5">Complexity Analysis</span></div>
+    def push(self, element):
+        self.stack.append(element)
+        if not self.min_stack or element <= self.min_stack[-1]:
+            self.min_stack.append(element)
 
-<div class="hide-small">
+    def pop(self):
+        if not self.stack:
+            return None
+        top = self.stack.pop()
+        if top == self.min_stack[-1]:
+            self.min_stack.pop()
+        return top
 
-<div class="row no-gutters my-2 align-items-end">
+    def top(self):
+        return self.stack[-1] if self.stack else None
 
-<div class="col font-weight-bold text-muted">Time:</div>
+    def getMin(self):
+        return self.min_stack[-1] if self.min_stack else None
+```
 
-<div class="col text-center">
+---
+## 🔹 7. Implement a _Linked List_ using _Stack_.
 
-<div class="text-muted font-weight-bold justify-content-center">Constant</div>
+### Answer
 
-<div class="complexity amazing first p-1 justify-content-center shadow-text selected-complexity effect7">O(1)</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-</div>
+---
 
-<div class="col disable text-center">
+## 🔹 8. Implement Doubly Linked List using Stacks with min complexity.
 
-<div class="text-muted font-weight-bold justify-content-center">Dbl. Logarithmic</div>
+### Answer
 
-<div class="complexity good p-1 justify-content-center shadow-text">O(log log n)</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-</div>
+---
 
-<div class="col disable text-center">
+## 🔹 9. Implement a _Queue_ using _Two Stacks_.
 
-<div class="text-muted font-weight-bold justify-content-center">Logarithmic</div>
+### Answer
 
-<div class="complexity good p-1 justify-content-center shadow-text">O(log n)</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-</div>
+---
 
-<div class="col disable text-center">
+## 🔹 10. Implement a _Queue_ using only _One Stack_.
 
-<div class="font-weight-bold  text-muted justify-content-center">Square Root</div>
+### Answer
 
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(√n)</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-</div>
+---
 
-<div class="col disable text-center">
+## 🔹 11. Implement _Stack_ using _Two Queues_ with efficient push.
 
-<div class="font-weight-bold  text-muted justify-content-center">Linear</div>
+### Answer
 
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(n)</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-</div>
+---
 
-<div class="col disable text-center">
+## 🔹 12. Implement _Three Stacks_ with _One Array_.
 
-<div class="font-weight-bold text-muted justify-content-center">Linearithmic</div>
+### Answer
 
-<div class="complexity bad p-1 justify-content-center shadow-text ">O(n log n)</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-</div>
+---
 
-<div class="col disable text-center">
+## 🔹 13. _Reverse_ a _String_ using _Stack_.
 
-<div class="font-weight-bold  text-muted justify-content-center">Quadratic</div>
+### Answer
 
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_n_<sup>2</sup>)</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-</div>
+---
 
-<div class="col disable text-center">
+## 🔹 14. _Reverse_ a _Stack_ without using any additional data structure.
 
-<div class="font-weight-bold   text-muted justify-content-center">Exponential</div>
+### Answer
 
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_2_<sup>n</sup>)</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-</div>
+---
 
-<div class="col disable text-center">
+## 🔹 15. _Sort_ a _Stack_ using _Recursion_.
 
-<div class="font-weight-bold text-muted">Factorial</div>
+### Answer
 
-<div class="complexity terrible last p-1 justify-content-center shadow-text ">O(n!)</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-</div>
+---
 
-</div>
+## 🔹 16. _Sort_ a _Stack_ using another _Stack_.
 
-</div>
+### Answer
 
-<div class="hide-small">
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-<div class="row no-gutters my-2 align-items-end">
+---
 
-<div class="col font-weight-bold text-muted">Space:</div>
+## 🔹 17. _Check_ if parentheses are _Balanced_ using _Stack_.
 
-<div class="col text-center">
+### Answer
 
-<div class="text-muted font-weight-bold justify-content-center">Constant</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-<div class="complexity amazing first p-1 justify-content-center shadow-text selected-complexity effect7">O(1)</div>
+---
 
-</div>
+## 🔹 18. _Find Duplicate Parenthesis_ in an expression.
 
-<div class="col disable text-center">
+### Answer
 
-<div class="text-muted font-weight-bold justify-content-center">Dbl. Logarithmic</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-<div class="complexity good p-1 justify-content-center shadow-text">O(log log n)</div>
+---
 
-</div>
+## 🔹 19. Given an _Extremely Large File_ that doesn't fit into memory, check if the parentheses are _Balanced_.
 
-<div class="col disable text-center">
+### Answer
 
-<div class="text-muted font-weight-bold justify-content-center">Logarithmic</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-<div class="complexity good p-1 justify-content-center shadow-text">O(log n)</div>
+---
 
-</div>
+## 🔹 20. Check for _Braces Balance_ in a really large (1T) file in _Parallel_.
 
-<div class="col disable text-center">
+### Answer
 
-<div class="font-weight-bold  text-muted justify-content-center">Square Root</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(√n)</div>
+---
 
-</div>
+## 🔹 21. Build a _Binary Expression Tree_ for the given expression.
 
-<div class="col disable text-center">
+### Answer
 
-<div class="font-weight-bold  text-muted justify-content-center">Linear</div>
+👉🏼 Check out all 21 answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(n)</div>
+---
 
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted justify-content-center">Linearithmic</div>
-
-<div class="complexity bad p-1 justify-content-center shadow-text ">O(n log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Quadratic</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_n_<sup>2</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Exponential</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_2_<sup>n</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted">Factorial</div>
-
-<div class="complexity terrible last p-1 justify-content-center shadow-text ">O(n!)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hide-large">
-
-**Time:** <mark>O(1)</mark>
-
-**Space:** <mark>O(1)</mark>
-
-</div>
-
-<div class="mt-3">
-
-<div>
-
-<div class="AnswerBody">
-
-If queue is implemented as _linked list_ the `enqueue` operation has `O(1)` time complexity.
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div style="font-size: 14px;">
-
-<div class="mb-3 mt-2"><span class="h5">Implementation</span></div>
-
-<div>
-
-<nav class="mdc-tab-bar">
-
-<div class="mdc-tab-scroller">
-
-<div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
-
-<div class="mdc-tab-scroller__scroll-content"><button class="mdc-ripple-upgraded mdc-ripple-upgraded--background-focused mdc-tab mdc-tab--min-width mdc-tab--active" aria-selected="true" tabindex="0">
-
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>Java</span> <span class="shadow-text lang-badge java">Java</span></span></div>
-
-<span class="mdc-tab-indicator mdc-tab-indicator--active"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button></div>
-
-</div>
-
-</div>
-
-</nav>
-
-</div>
-
-<div class="mt-2">
-
-<div class="AnswerBody">
-
-    public Stack<E> {
-        private Queue<E> q1 = new Queue<E>();
-        private Queue<E> q2 = new Queue<E>();
-
-        public void push(E x) {
-            q1.enqueue(x);
-        }
-
-        public E pop() {
-            while (q1.size() > 1) {
-                q2.enqueue(q1.dequeue());
-            }
-            E pop = q1.dequeue();
-            Queue<E> temp = q1;
-            q1 = q2;
-            q2 = temp;
-            return pop;
-        }
-    }
-
-</div>
-
-</div>
-
-</div>
-
-<div class="row my-2">
-
-<div><span>Source: <span>stackoverflow.com https://stackoverflow.com/questions/688276/implement-stack-using-two-queues "Implement Stack using Two Queues (with efficient `push`) Interview Questions Source To Answer"</span></span>   </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 8\. What is complexity of push and pop for a Stack implemented using a LinkedList?
-
-</div>
-
-<div>
-
-### Answer:
-
-<div class="answer">
-
-<div>
-
-<div>
-
-<div class="AnswerBody">
-
-`_O_(_1_)`. Note, you don't have to insert at the end of the list. If you insert at the front of a (singly-linked) list, they are both `O(1)`.
-
-Stack contains 1,2,3:
-
-    [1]->[2]->[3]
-
-Push 5:
-
-    [5]->[1]->[2]->[3]
-
-Pop:
-
-    [1]->[2]->[3] // returning 5
-
-</div>
-
-</div>
-
-<div class="row my-2">
-
-<div><span>Source: <span>stackoverflow.com https://stackoverflow.com/questions/6537150/time-complexity-of-a-stack-adt-implemented-using-a-linked-list#:~:text=For%20a%20doubly%20linked%20list,operations%20of%20enqueue%20and%20dequeue. "What is complexity of `push` and `pop` for a Stack implemented using a LinkedList? Interview Questions Source To Answer"</span></span>   </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 9\. Design a Stack that supports retrieving the min element in O(1)
-
-</div>
-
-<div>
-
-### Answer:
-
-<div class="answer">
-
-<div>
-
-<div class="mb-2"><span class="h5">Problem</span></div>
-
-<div>
-
-<div class="AnswerBody">
-
-Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
-
-*   `push(x)` - Push element x onto stack.
-*   `pop()` - Removes the element on top of the stack.
-*   `top()` - Get the top element.
-*   `getMin()` - Retrieve the **minimum** element in the stack.
-
-</div>
-
-</div>
-
-<div>
-
-<div class="AnswerBody">
-
-Using a linked list store the current minimum value. When you add a new number it looks at the previous min and changes the current min to the current value if the current value is lower. Note, each node stores the `min` value _at or below_ it so we don't need to recalculate `min` on pop.
-
-</div>
-
-</div>
-
-<div style="font-size: 14px;">
-
-<div class="mb-3 mt-2"><span class="h5">Implementation</span></div>
-
-<div>
-
-<nav class="mdc-tab-bar">
-
-<div class="mdc-tab-scroller">
-
-<div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
-
-<div class="mdc-tab-scroller__scroll-content"><button class="mdc-ripple-upgraded mdc-ripple-upgraded--background-focused mdc-tab mdc-tab--min-width mdc-tab--active" aria-selected="true" tabindex="0">
-
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>Java</span> <span class="shadow-text lang-badge java">Java</span></span></div>
-
-<span class="mdc-tab-indicator mdc-tab-indicator--active"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button><button class="mdc-ripple-upgraded mdc-tab mdc-tab--min-width">
-
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>Python</span> <span class="shadow-text lang-badge py">PY</span></span></div>
-
-<span class="mdc-tab-indicator"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button></div>
-
-</div>
-
-</div>
-
-</nav>
-
-</div>
-
-<div class="mt-2">
-
-<div class="AnswerBody">
-
-    class MinStack {
-
-        private class Node {
-            int val;
-            int min;
-            Node next;
-
-            private Node(int val, int min) {
-                this(val, min, null);
-            }
-
-            private Node(int val, int min, Node next) {
-                this.val = val;
-                this.min = min;
-                this.next = next;
-            }
-        }
-
-        private Node head;
-
-        public void push(int x) {
-            if(head == null) 
-                head = new Node(x, x);
-            else 
-                head = new Node(x, Math.min(x, head.min), head);
-        }
-
-        public void pop() {
-            head = head.next;
-        }
-
-        public int top() {
-            return head.val;
-        }
-
-        public int getMin() {
-            return head.min;
-        }
-    }
-
-</div>
-
-</div>
-
-</div>
-
-<div class="row my-2">
-
-<div><span>Source: <span>Stackoverflow.com https://stackoverflow.com/ "Design a Stack that supports retrieving the min element in _`O(1)`_ Interview Questions Source To Answer"</span></span>   </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 10\. Reverse a String using Stack
-
-</div>
-
-<div>
-
-### Answer:
-
-<div class="answer">
-
-<div>
-
-<div>
-
-<div class="AnswerBody">
-
-The followings are the steps to reversing a String using Stack:
-
-1.  `String` to `char[]`.
-2.  Create a `Stack`.
-3.  **Push** all characters, one by one.
-4.  Then **Pop** all characters, one by one and put into the `char[]`.
-5.  Finally, convert to the `String`.
-
-</div>
-
-</div>
-
-<div>
-
-<div class="mb-2 mt-2"><span class="h5">Complexity Analysis</span></div>
-
-<div class="hide-small">
-
-<div class="row no-gutters my-2 align-items-end">
-
-<div class="col font-weight-bold text-muted">Time:</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Constant</div>
-
-<div class="complexity amazing first p-1 justify-content-center shadow-text">O(1)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Dbl. Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Square Root</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(√n)</div>
-
-</div>
-
-<div class="col text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Linear</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text selected-complexity effect7">O(n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted justify-content-center">Linearithmic</div>
-
-<div class="complexity bad p-1 justify-content-center shadow-text ">O(n log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Quadratic</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_n_<sup>2</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Exponential</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_2_<sup>n</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted">Factorial</div>
-
-<div class="complexity terrible last p-1 justify-content-center shadow-text ">O(n!)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hide-small">
-
-<div class="row no-gutters my-2 align-items-end">
-
-<div class="col font-weight-bold text-muted">Space:</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Constant</div>
-
-<div class="complexity amazing first p-1 justify-content-center shadow-text">O(1)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Dbl. Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Square Root</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(√n)</div>
-
-</div>
-
-<div class="col text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Linear</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text selected-complexity effect7">O(n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted justify-content-center">Linearithmic</div>
-
-<div class="complexity bad p-1 justify-content-center shadow-text ">O(n log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Quadratic</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_n_<sup>2</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Exponential</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_2_<sup>n</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted">Factorial</div>
-
-<div class="complexity terrible last p-1 justify-content-center shadow-text ">O(n!)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hide-large">
-
-**Time:** <mark>O(n)</mark>
-
-**Space:** <mark>O(n)</mark>
-
-</div>
-
-</div>
-
-<div style="font-size: 14px;">
-
-<div class="mb-3 mt-2"><span class="h5">Implementation</span></div>
-
-<div>
-
-<nav class="mdc-tab-bar">
-
-<div class="mdc-tab-scroller">
-
-<div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
-
-<div class="mdc-tab-scroller__scroll-content"><button class="mdc-ripple-upgraded mdc-ripple-upgraded--background-focused mdc-tab mdc-tab--min-width mdc-tab--active" aria-selected="true" tabindex="0">
-
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>Java</span> <span class="shadow-text lang-badge java">Java</span></span></div>
-
-<span class="mdc-tab-indicator mdc-tab-indicator--active"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button></div>
-
-</div>
-
-</div>
-
-</nav>
-
-</div>
-
-<div class="mt-2">
-
-<div class="AnswerBody">
-
-    public static String reverse(String str) {
-        char[] charArr = str.toCharArray();
-        int size = charArr.length;
-        Stack stack = new Stack(size);
-
-        int i;
-        for (i = 0; i < size; ++i) {
-            stack.push(charArr[i]);
-        }
-
-        for (i = 0; i < size; ++i) {
-            charArr[i] = stack.pop();
-        }
-
-        return String.valueOf(charArr);
-    }
-
-</div>
-
-</div>
-
-</div>
-
-<div class="row my-2">
-
-<div><span>Source: <span>Stackoverflow.com https://stackoverflow.com/ "Reverse a String using Stack Interview Questions Source To Answer"</span></span>   </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 11\. Compare Array based vs Linked List stack implementations
-
-</div>
-
-<div>👉🏼 Check all 25 answers https://devinterview.io/data/stacks-interview-questions</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 12\. Explain what are Infix, Prefix and Postfix Expressions?
-
-</div>
-
-<div>👉🏼 Check all 25 answers https://devinterview.io/data/stacks-interview-questions</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 13\. Implement Double Linked List from Stack with min complexity
-
-</div>
-
-<div>👉🏼 Check all 25 answers https://devinterview.io/data/stacks-interview-questions</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 14\. Sort a Stack using another Stack
-
-</div>
-
-<div>👉🏼 Check all 25 answers https://devinterview.io/data/stacks-interview-questions</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 15\. Check if parentheses are balanced using Stack
-
-</div>
-
-<div>👉🏼 Check all 25 answers https://devinterview.io/data/stacks-interview-questions</div>
-
-</div>
-
-Thanks 🙌 for reading and good luck on your next tech interview!  
-Explore 3800+ dev interview question here 👉 [Devinterview.io https://devinterview.io/)</div>
-
-</div>
