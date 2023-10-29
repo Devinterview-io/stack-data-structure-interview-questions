@@ -4,7 +4,7 @@
 
 Check out our carefully selected list of **basic** and **advanced** Stacks questions and answers to be well-prepared for your tech interviews in 2024.
 
-![Stacks Decorative Image](https://storage.googleapis.com/dev-stack-app.appspot.com/blogImg/stacks.png?GoogleAccessId=firebase-adminsdk-bgeaf%40dev-stack-app.iam.gserviceaccount.com&Expires=1698606785&Signature=NCUUa1jSHvgmIgCJuRozKJglqXekTe6bgrv8h5R68l4Mn%2FkJDmiYkYY9cSUgyoIYA3YWGiDstysUy9%2BBedgsAAkG9PDeFfqR1dTi%2FPs3U44v%2BRobjUDeurnExyrsXakbGmd0GyQMTFFG7pSBCelHPHj6K41cIeu0zeXO1S%2F%2Bm%2Bp%2BmClTNaqKASFzKjgQ%2BqEqfu15w%2F9hXlcpO%2B5LgPxoavl4kWsD7Rwur9m8qyDQgcA8T7eAduUYjku6JAID7e9l0Ad39gDsNEYeCiXJNaF1vfmT6H7NnaEqu2DYoh%2F0zXeQN7hQPw%2BlJG6%2FK%2Bj2nMpM6pCUXGElAdb2XZmq7gNhmg%3D%3D)
+![Stacks Decorative Image](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/blogImg%2Fstacks.png?alt=media&token=ec00727b-b6bc-4a03-a1b9-6d422bfa54e9&_gl=1*1mqplsu*_ga*OTYzMjY5NTkwLjE2ODg4NDM4Njg.*_ga_CW55HF8NVT*MTY5ODYwNTk1NS4xOTAuMS4xNjk4NjA2NzI0LjM2LjAuMA..)
 
 👉🏼 You can also find all answers here: [Devinterview.io - Stacks](https://devinterview.io/data/stacks-interview-questions)
 
