@@ -1,4 +1,4 @@
-# 46 Fundamental Stack Data Structure Interview Questions in 2025
+# 46 Fundamental Stack Data Structure Interview Questions in 2026
 
 <div>
 <p align="center">
